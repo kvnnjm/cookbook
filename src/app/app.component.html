@@ -1,10 +1,13 @@
-<h1>
+<h2>
   {{title}}
-</h1>
+</h2>
 
-<div>
-  <ul>
-    <li></li>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li *ngFor="let category of categories" (click) = "selectCategory(category.id)"> <a >{{category.name}}</a></li>
+    </ul>
+  </div>
+</nav>
 
-  </ul>
-</div>
+<recipe-list *ngIf = "selectedCategoryRecipes" [recipes] = "selectedCategoryRecipes" ></recipe-list>

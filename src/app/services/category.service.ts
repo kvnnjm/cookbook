@@ -6,13 +6,13 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class CategoryService {
-  private url = 'categories';
+  private url = '/api/categories';
   constructor(private http: Http) { }
 
   getCategories(): Promise<Category[]> {
     return this.http.get(this.url)
       .toPromise()
-      .then(response => response.json().data as Category[])
+      .then(response => response.json() as Category[])
       .catch(this.handleError);;
   }
 
@@ -20,6 +20,5 @@ export class CategoryService {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
-
 
 }
