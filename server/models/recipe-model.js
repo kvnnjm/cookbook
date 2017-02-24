@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 var recipeSchema = mongoose.Schema({
-  id : Number,
   name: String,
   category: String,
   chef: String,
@@ -9,9 +8,10 @@ var recipeSchema = mongoose.Schema({
   description: String,
   comments: Array,
   rank_sum: Number,
-  rank_count: Number},
-{
-  collection: 'recipes'
+  rank_count: Number
+}, {
+  collection: 'recipes',
+  versionKey: false
 });
 
 var Recipe = mongoose.model('Recipe', recipeSchema);

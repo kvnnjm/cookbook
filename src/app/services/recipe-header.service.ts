@@ -6,12 +6,11 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class RecipeHeaderService {
-  private url = '/api/categories/?/recipes';
-
+  private url = '/api/category/:id/recipes';
   constructor(private http: Http) {}
 
-  getRecipeHeaders(category :number ): Promise<RecipeHeader[]> {
-    return this.http.get(this.url.replace("?",category+""))
+  getRecipeHeaders(category :string ): Promise<RecipeHeader[]> {
+    return this.http.get(this.url.replace(":id",category+""))
       .toPromise()
       .then(response => response.json() as RecipeHeader[])
       .catch(this.handleError);

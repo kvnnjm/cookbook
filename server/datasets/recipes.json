@@ -1,5 +1,4 @@
 {
-  "id" : 1,
   "name": "Quick Chicken Nuggets",
   "category": "Meat",
   "chef": "Sydney Veaceslav",
@@ -12,10 +11,9 @@
   }],
   "description": "Heat oven to broil.Coat baking rack with nonstick cooking spray.Place rack over baking sheet;set aside. Stir together bread crumbs, garlic powder and thyme in a pie plate;set aside. Stir together mustard and mayonnaise. Reserve about 1 / 2 cup of mustard mixture for dipping sauce.Brush chicken pieces with remaining mustard mix;place chicken in pie plate with bread crumb mixture, spooning crumbs on top of pieces and pressing to adhere.Transfer to prepared baking rack.Broil for 10 minutes or until cooked through. Serve with reserved dipping sauce and green beans on the side.",
   "comments": [],
-  "rank_sum" : 0,
-  "rank_count" : 0
+  "rank_sum": 0,
+  "rank_count": 0
 } {
-  "id" : 2,
   "name": "Caribbean Salsa",
   "category": "Salads",
   "chef": "Adalwolf Sabah",
@@ -28,6 +26,21 @@
   }],
   "description": " In a medium bowl, combine kiwi, mango, avocado, and lime juice. Cover and set aside. Place a chicken breast half between two sheets of plastic wrap. Using the flat side of a meat mallet, lightly pound chicken until 1/2-inch thickness. Repeat with remaining chicken breast halves. Sprinkle chicken with salt and black pepper. In a very large nonstick skillet,heat oil over medium heat.Add chicken;cook for 8 to 10 minutes or until chicken is no longer pink,turning once halfway through cooking.Remove chicken from skillet;coarsely chop and keep warm.Add cumin seeds to the hot skillet.Cook about 30 seconds or until fragrant.Add drained stir - fry vegetables,    the chile pepper,    and garlic.Cook and stir over medium heat    for 3 to 5 minutes or until heated through.Stir in cilantro.    Divide pepper mixture among four serving plates.Top with chicken.Spoon mango mixture over chicken.If desired,    garnish with lime wedges.Makes 4 servings(1 / 2 cup pepper mixture, 1 / 2 cup chicken breast, and a scant 1 / 2 cup mango mixture per serving).",
   "comments": [],
-  "rank_sum" : 0,
-  "rank_count" : 0
+  "rank_sum": 0,
+  "rank_count": 0
+} {
+  "name": "Shanghai Pasta",
+  "category": "Pasta",
+  "chef": "Gabriel Bernhard",
+  "description": "Cook pasta according to package directions. Drain. Set aside. Keep warm. For sauce, stir together soy sauce, plum sauce, sesame oil, and chili paste (if using). Set aside. Pour cooking oil into a wok or large skillet. (If necessary, add more oil during cooking.) Cook and stir sweet pepper and beans in hot oil for 5 minutes. Push from center of wok. Add shrimp, garlic, ginger, and black pepper to center of wok. Cook and stir for 2 to 3 minutes or until shrimp are opaque. Stir in sauce and pea pods. Stir in pasta; heat through. To serve, top with onions and sesame seeds. Makes 4 main-dish servings.",
+  "rank_sum": 0,
+  "rank_count": 0,
+  "comments": [],
+  "ingredients": [{
+    "amount": "1 pounds",
+    "name": "Cooking oil"
+  }, {
+    "amount": "1/3 cup",
+    "name": "Toasted sesame oil"
+  }]
 }

@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
 
-var categorySchema = mongoose.Schema(
-  { id : Number, 
-    name: String },
-  { collection : 'categories' });
+var categorySchema = mongoose.Schema({
+  name: String
+}, {
+  collection: 'categories',
+  versionKey: false
+});
 
 var Category = mongoose.model('Category', categorySchema);
 

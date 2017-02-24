@@ -1,0 +1,60 @@
+<h2>
+  Detail
+</h2>
+
+<div>
+  <label>Name: </label>
+  <input [(ngModel)]="recipe.name"  [readonly]="!editing">
+
+  <label>Category: </label>
+
+  <select [(ngModel)] = "recipe.category"  [disabled]="!editing">
+    <option *ngFor="let category of categories" [ngValue]="category.name">{{category.name}}</option>
+  </select>
+
+  <label>Chef: </label>
+  <input [(ngModel)]="recipe.chef"  [readonly]="!editing">
+
+  <label>Ingredients: </label>
+  <div>
+    <ul>
+      <li *ngFor="let ingredient of recipe.ingredients"> name: {{ingredient.name}} amount: {{ingredient.amount}} <button (click)="removeIngredient(ingredient)" [hidden]="!editing">X</button> </li>
+    </ul>
+  </div>
+
+  <div [hidden]="!editing">
+
+  <label>name: </label>
+  <input [(ngModel)]="editingIngredient.name">
+
+  <label>amount: </label>
+  <input [(ngModel)]="editingIngredient.amount">
+
+  <button (click)="addIngredient()"> + </button>
+  </div>
+
+  <label>Description: </label>
+  <input [(ngModel)]="recipe.description"  [readonly]="!editing">
+
+</div>
+
+<button (click)="goBack()">Back</button>
+<button (click)="edit()" [hidden] = "editing">Edit</button>
+<button (click)="save()" [hidden] = "!editing">Save</button>
+
+<div>
+
+  <label>Comments: </label>
+  <div>
+    <ul>
+      <li *ngFor="let comment of recipe.comments"> name: {{comment}}</li>
+    </ul>
+  </div>
+
+  <input [(ngModel)]="newComment" >
+  <button (click)="leaveComment()">Leave Comment</button>
+
+
+
+
+</div>

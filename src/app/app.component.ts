@@ -10,18 +10,6 @@ import { RecipeHeader } from './models/recipe-header'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'Recipe Categories';
-  categories: Category[];
-  selectedCategoryRecipes: RecipeHeader[];
-
-  constructor(private categoryService: CategoryService, private recipeHeaderService: RecipeHeaderService) { }
-
-  ngOnInit(): void {
-    this.categoryService.getCategories().then(categories => this.categories = categories);
-  }
-
-  private selectCategory(category: number): void {
-      this.recipeHeaderService.getRecipeHeaders(category).then(recipesHeader => this.selectedCategoryRecipes = recipesHeader);
-  }
+export class AppComponent  {
+  title = 'Cookbook';
 }

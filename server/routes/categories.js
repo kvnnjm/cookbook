@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 //retrieve all recipes of a specified category
 router.get('/:idcategory/recipes',function (req,res,next) {
-  Category.findOne({ id: req.params.idcategory }, function(err, category) {
+  Category.findOne({ _id: req.params.idcategory }, function(err, category) {
     Recipe.find( {category: category.name } , 'id name chef rank_sum rank_count' ,function (err, recipes) {
 
       // recipes.forEach(function (recipe) {

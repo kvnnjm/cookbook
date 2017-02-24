@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class CategoryService {
-  private url = '/api/categories';
+  private url = '/api/category';
   constructor(private http: Http) { }
 
   getCategories(): Promise<Category[]> {
