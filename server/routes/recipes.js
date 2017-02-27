@@ -2,6 +2,7 @@ var express = require('express');
 
 var router = express.Router();
 var Recipe = require('../models/recipe-model');
+var rank_average_operation = require('../rank_average_operation')
 
 // var comments = require('./routes/comments');
 // var ranks = require('./routes/ranks');
@@ -12,23 +13,26 @@ var Recipe = require('../models/recipe-model');
 router.get('/', function(req, res, next) {
   //list all recipes
   Recipe.find(function(err, recipes) {
+    rank_average_operation(recipes);
     res.send(JSON.stringify(recipes));
     next();
   });
 });
 
 router.get('/:idrecipe', function(req, res, next) {
-  //retrieve specific recipe
+  //retrieve specific recipe by id
   Recipe.findOne({ _id : req.params.idrecipe }, function(err, recipe) {
+    rank_average_operation([recipe]);
     res.send(JSON.stringify(recipe));
     next();
   });
 });
 
 router.get('/name/:name', function(req, res, next) {
-  //retrieve specific recipe
+  //retrieve specific recipe by name, for searching
   console.log(req.params.name);
   Recipe.find({ name : { $regex: req.params.name , $options: 'i'}},'id name chef rank_sum rank_count imageurl', function(err, recipes) {
+    rank_average_operation(recipes);
     res.send(JSON.stringify(recipes));
     next();
   });

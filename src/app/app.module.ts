@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RecipeListComponent} from './recipes/recipe-list/recipe-list.component'
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component'
 import { RecipeSearchComponent } from './recipes/recipe-search/recipe-search.component'
+import { IngredientsComponent} from './recipes/recipe-detail/ingredients/ingredients.component'
 
 import { CategoryService } from './services/category.service';
 import { RecipeHeaderService } from './services/recipe-header.service';
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     RecipeListComponent,
     RecipeDetailComponent,
-    RecipeSearchComponent
+    RecipeSearchComponent,
+    IngredientsComponent
   ],
   imports: [
     BrowserModule,

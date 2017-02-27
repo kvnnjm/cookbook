@@ -1,0 +1,8 @@
+input {
+  float: right;
+  background-color: lightblue;
+}
+
+.right{
+  float: right;
+}

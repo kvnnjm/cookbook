@@ -1,52 +1,33 @@
-<h2>
-  Detail
-</h2>
-
-<div>
-
-  <img [src]="recipe.imageurl"  height=300 width=300>
-
-  <label>Name: </label>
-  <input [(ngModel)]="recipe.name"  [readonly]="!editing">
-
-  <label>Category: </label>
-
-  <select [(ngModel)] = "recipe.category"  [disabled]="!editing">
-    <option *ngFor="let category of categories" [ngValue]="category.name">{{category.name}}</option>
-  </select>
-
-  <label>Chef: </label>
-  <input [(ngModel)]="recipe.chef"  [readonly]="!editing">
-
-  <label>Ingredients: </label>
+<div class="panel panel-default">
+  <img [src]="recipe.imageurl" height=300 width=300>
   <div>
-    <ul>
-      <li *ngFor="let ingredient of recipe.ingredients"> name: {{ingredient.name}} amount: {{ingredient.amount}} <button (click)="removeIngredient(ingredient)" [hidden]="!editing">X</button> </li>
-    </ul>
+    <label>Name: </label>
+    <input [(ngModel)]="recipe.name" [readonly]="!editing">
+
+    <label>Category: </label>
+    <select [(ngModel)]="recipe.category" [disabled]="!editing">
+      <option *ngFor="let category of categories" [ngValue]="category.name">{{category.name}}</option>
+    </select>
+
+    <label>Chef: </label>
+    <input [(ngModel)]="recipe.chef" [readonly]="!editing">
   </div>
 
-  <div [hidden]="!editing">
-
-  <label>name: </label>
-  <input [(ngModel)]="editingIngredient.name">
-
-  <label>amount: </label>
-  <input [(ngModel)]="editingIngredient.amount">
-
-  <button (click)="addIngredient()"> + </button>
-  </div>
-
-  <label>Description: </label>
-  <input [(ngModel)]="recipe.description"  [readonly]="!editing">
-
+  <ingredients [(editing)]="editing" [(ingredients)]="recipe.ingredients"></ingredients>
 </div>
 
-<button (click)="goBack()">Back</button>
-<button (click)="edit()" [hidden] = "editing">Edit</button>
-<button (click)="save()" [hidden] = "!editing">Save</button>
+<div>
+  <label>Description: </label>
+  <input class="form-control input-lg" [(ngModel)]="recipe.description" [readonly]="!editing">
+</div>
 
 <div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="edit()" [hidden]="editing">Edit</button>
+  <button (click)="save()" [hidden]="!editing">Save</button>
+</div>
 
+<div class="panel panel-default">
   <label>Comments: </label>
   <div>
     <ul>
@@ -54,10 +35,6 @@
     </ul>
   </div>
 
-  <input [(ngModel)]="newComment" >
+  <input class="form-control input-lg" [(ngModel)]="newComment">
   <button (click)="leaveComment()">Leave Comment</button>
-
-
-
-
 </div>

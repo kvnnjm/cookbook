@@ -8,7 +8,6 @@ export class Recipe {
   ingredients: Ingredient[];
   description: string;
   comments: string[];
-  ranksum: number;
-  rankcount: number;
+  rankaverage: number;
   imageulr: string;
 }

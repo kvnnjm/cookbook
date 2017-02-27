@@ -1,0 +1,19 @@
+<div class="panel panel-default col-xs-4 right">
+  <label>Ingredients: </label>
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let ingredient of ingredients"> name: {{ingredient.name}} amount: {{ingredient.amount}} <button (click)="removeIngredient(ingredient)" [hidden]="!editing">X</button> </li>
+    </ul>
+  </div>
+
+  <div [hidden]="!editing">
+
+  <label>name: </label>
+  <input [(ngModel)]="newIngredient.name">
+
+  <label>amount: </label>
+  <input [(ngModel)]="newIngredient.amount">
+
+  <button (click)="addIngredient()"> + </button>
+  </div>
+</div>

@@ -8,7 +8,8 @@ var recipeSchema = mongoose.Schema({
   description: String,
   comments: Array,
   rank_sum: Number,
-  rank_count: Number
+  rank_count: Number,
+  rank_average: Number
 }, {
   collection: 'recipes',
   versionKey: false

@@ -2,20 +2,27 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
-        <li *ngFor="let category of categories" (click) = "selectCategory(category)"> <a>{{category.name}}</a></li>
-        <li><recipe-search></recipe-search> </li>
+        <li *ngFor="let category of categories" (click)="selectCategory(category)"> <a>{{category.name}}</a></li>
+        <div class="right"><recipe-search></recipe-search></div>
       </ul>
     </div>
   </nav>
 
-  <div *ngIf = "recipeHeaders">
-    <ul>
-      <li *ngFor="let recipe of recipeHeaders" (click) = "goDetails(recipe)"> <img [src]="recipe.imageurl"  height=150 width=150> {{recipe.name}} {{recipe.chef}} <button (click)="deleteRecipe(recipe, $event)">X</button>   </li>
-
+  <div *ngIf="recipeHeaders">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let recipe of recipeHeaders" (click)="goDetails(recipe)">
+        <img height=150 width=150 [src]="recipe.imageurl">
+        <div>
+          <p>Recipe: {{recipe.name}}</p>
+          <p>Chef:{{recipe.chef}}</p>
+          <p>Rating:{{recipe.rankaverage}}</p>
+          <button class="btn btn-warning btn-circle" (click)="deleteRecipe(recipe, $event)"> <i class="glyphicon glyphicon-remove"></i>  </button>
+        </div>
+      </li>
     </ul>
   </div>
 
   <div>
-  <button (click)="createRecipe()">+</button>
+    <button class="btn btn-primary btn-primary" (click)="createRecipe()">Create Recipe</button>
   </div>
 </div>

@@ -19,25 +19,22 @@ import 'rxjs/add/operator/switchMap';
 
 export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
-  categories : Category[];
-  editingIngredient : Ingredient;
-  newComment : string;
+  categories: Category[];
+  newComment: string;
   editing: boolean;
   new: boolean;
 
-
   constructor(private recipeService: RecipeService, private categoryService: CategoryService, private route: ActivatedRoute, private location: Location) {
     this.recipe = new Recipe();
-    this.editingIngredient = new Ingredient();
     this.editing = false;
     this.new = false;
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      if(params['id']){
+      if (params['id']) {
         this.recipeService.getRecipe(params['id']).then(recipe => this.recipe = recipe);
-      }else{
+      } else {
         this.editing = true;
         this.new = true;
       }
@@ -54,29 +51,18 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   private save(): void {
-    if(this.new){
+    if (this.new) {
       this.recipeService.createRecipe(this.recipe);
-    }else{
+    } else {
       this.recipeService.saveRecipe(this.recipe);
     }
     this.editing = false;
   }
 
-  private removeIngredient(ingredient: Ingredient): void {
-    this.recipe.ingredients = this.recipe.ingredients.filter((recipeIngredient : Ingredient) => recipeIngredient != ingredient);
-  }
-
-  private addIngredient(){
-    this.recipe.ingredients.push(this.editingIngredient);
-  }
-
-  private leaveComment(){
+  private leaveComment() {
     this.recipe.comments.push(this.newComment);
 
     //temporal
     this.save()
   }
-
-
-
 }

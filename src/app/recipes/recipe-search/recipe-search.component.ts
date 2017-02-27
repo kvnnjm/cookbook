@@ -14,6 +14,7 @@ import { RecipeHeader } from '../../models/recipe-header';
 @Component({
   selector: 'recipe-search',
   templateUrl: './recipe-search.component.html',
+  styleUrls: ['./recipe-search.component.css'],
   providers: [RecipeSearchService]
 })
 export class RecipeSearchComponent implements OnInit {
