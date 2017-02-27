@@ -2,14 +2,16 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
-        <li *ngFor="let category of categories" (click) = "selectCategory(category)"> <a >{{category.name}}</a></li>
+        <li *ngFor="let category of categories" (click) = "selectCategory(category)"> <a>{{category.name}}</a></li>
+        <li><recipe-search></recipe-search> </li>
       </ul>
     </div>
   </nav>
 
   <div *ngIf = "recipeHeaders">
     <ul>
-      <li *ngFor="let recipe of recipeHeaders" (click) = "goDetails(recipe)"> {{recipe.name}} {{recipe.chef}} <button (click)="deleteRecipe(recipe, $event)">X</button>   </li>
+      <li *ngFor="let recipe of recipeHeaders" (click) = "goDetails(recipe)"> <img [src]="recipe.imageurl"  height=150 width=150> {{recipe.name}} {{recipe.chef}} <button (click)="deleteRecipe(recipe, $event)">X</button>   </li>
+
     </ul>
   </div>
 

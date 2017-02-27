@@ -10,4 +10,5 @@ export class Recipe {
   comments: string[];
   ranksum: number;
   rankcount: number;
+  imageulr: string;
 }

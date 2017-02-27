@@ -4,4 +4,5 @@ export class RecipeHeader {
   chef: string;
   ranksum: number;
   rankcount: number;
+  imageulr: string;
 }

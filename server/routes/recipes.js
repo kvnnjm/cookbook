@@ -25,6 +25,15 @@ router.get('/:idrecipe', function(req, res, next) {
   });
 });
 
+router.get('/name/:name', function(req, res, next) {
+  //retrieve specific recipe
+  console.log(req.params.name);
+  Recipe.find({ name : { $regex: req.params.name , $options: 'i'}},'id name chef rank_sum rank_count imageurl', function(err, recipes) {
+    res.send(JSON.stringify(recipes));
+    next();
+  });
+});
+
 router.put('/:idrecipe', function(req, res, next) {
   //update specific recipe
   Recipe.findOne({ _id: req.params.idrecipe }, function(err, recipe) {

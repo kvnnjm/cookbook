@@ -7,10 +7,12 @@ import { RouterModule, Routes }   from '@angular/router';
 import { AppComponent } from './app.component';
 import { RecipeListComponent} from './recipes/recipe-list/recipe-list.component'
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component'
+import { RecipeSearchComponent } from './recipes/recipe-search/recipe-search.component'
 
 import { CategoryService } from './services/category.service';
 import { RecipeHeaderService } from './services/recipe-header.service';
 import { RecipeService } from './services/recipe.service'
+import { RecipeSearchService}  from "./services/recipe-search.service";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -18,7 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     RecipeListComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    RecipeSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [CategoryService, RecipeHeaderService, RecipeService],
+  providers: [CategoryService, RecipeHeaderService, RecipeService, RecipeSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

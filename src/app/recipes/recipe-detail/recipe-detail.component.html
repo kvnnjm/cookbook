@@ -3,6 +3,9 @@
 </h2>
 
 <div>
+
+  <img [src]="recipe.imageurl"  height=300 width=300>
+
   <label>Name: </label>
   <input [(ngModel)]="recipe.name"  [readonly]="!editing">
 
@@ -47,7 +50,7 @@
   <label>Comments: </label>
   <div>
     <ul>
-      <li *ngFor="let comment of recipe.comments"> name: {{comment}}</li>
+      <li *ngFor="let comment of recipe.comments"> {{comment}} </li>
     </ul>
   </div>
 
